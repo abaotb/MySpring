@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="same-origin">
+<title>史上最全最强SpringMVC详细示例实战教程 - PointNet - 博客园</title>
+<link type="text/css" rel="stylesheet" href="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-coffee.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-coffee-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/goody9807/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/goody9807/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/goody9807/wlwmanifest.xml">
+<script async="" src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js"></script><script type="text/javascript" src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/encoder.js"></script><script src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script>
+<script type="text/javascript">var currentBlogApp = 'goody9807', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+<center>
+
+
+<!-- 728*90 -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-5473807936356955" data-ad-slot="2597007063"></ins>
+
+
+</center>
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/goody9807/"><img id="blogLogo" src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/goody9807/">goody9807</a></h1>
+<h2>避风的港湾~~~寻找技术的精华<br>
+微信公号siwa8</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/goody9807/">首页</a></li>
+	<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/PointNet">联系</a></li>
+	<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+	<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/goody9807/rss">订阅</a>
+	<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/goody9807/rss"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+			<div class="blogStats">
+				
+				<div id="blog_stats">
+<!--done-->
+随笔- 779&nbsp;
+文章- 5&nbsp;
+评论- 761&nbsp;
+</div>
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/goody9807/p/6450589.html">史上最全最强SpringMVC详细示例实战教程</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><h1><strong>SpringMVC学习笔记----</strong></h1>
+<h2><strong>一、SpringMVC基础入门，创建一个HelloWorld程序</strong></h2>
+<p>1.首先，导入SpringMVC需要的jar包。</p>
+<div><img alt=""><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/032131066955378.png" alt=""></div>
+<div>2.添加Web.xml配置文件中关于SpringMVC的配置</div>
+<div>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>  &lt;!--configure the setting of springmvcDispatcherServlet and configure the mapping--&gt;
+  &lt;servlet&gt;
+      &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+      &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;classpath:springmvc-servlet.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;!-- &lt;load-on-startup&gt;1&lt;/load-on-startup&gt; --&gt;
+  &lt;/servlet&gt;
+
+  &lt;servlet-mapping&gt;
+      &lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+      &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>3.在src下添加springmvc-servlet.xml配置文件</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd"&gt;                    
+
+    &lt;!-- scan the package and the sub package --&gt;
+    &lt;context:component-scan base-package="test.SpringMVC"/&gt;
+
+    &lt;!-- don't handle the static resource --&gt;
+    &lt;mvc:default-servlet-handler /&gt;
+
+    &lt;!-- if you use annotation you must configure following setting --&gt;
+    &lt;mvc:annotation-driven /&gt;
+    
+    &lt;!-- configure the InternalResourceViewResolver --&gt;
+    &lt;bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+            id="internalResourceViewResolver"&gt;
+        &lt;!-- 前缀 --&gt;
+        &lt;property name="prefix" value="/WEB-INF/jsp/" /&gt;
+        &lt;!-- 后缀 --&gt;
+        &lt;property name="suffix" value=".jsp" /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>4.在WEB-INF文件夹下创建名为jsp的文件夹，用来存放jsp视图。创建一个hello.jsp，在body中添加“Hello World”。</p>
+<p>5.建立包及Controller，如下所示</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/032227247897004.png" alt=""></p>
+<p>6.编写Controller代码</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/mvc")
+public class mvcController {
+
+    @RequestMapping("/hello")
+    public String hello(){        
+        return "hello";
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>7.启动服务器，键入&nbsp;http://localhost:8080/项目名/mvc/hello</p>
+<h2>二、配置解析</h2>
+</div>
+<p>1.Dispatcherservlet</p>
+<p>　　DispatcherServlet是前置控制器，配置在web.xml文件中的。拦截匹配的请求，Servlet拦截匹配规则要自已定义，把拦截下来的请求，依据相应的规则分发到目标Controller来处理，是配置spring MVC的第一步。</p>
+<p>2.InternalResourceViewResolver</p>
+<p>　　视图名称解析器</p>
+<p>3.以上出现的注解</p>
+<p>@Controller&nbsp;负责注册一个bean 到spring 上下文中</p>
+<p>@RequestMapping&nbsp;注解为控制器指定可以处理哪些 URL 请求</p>
+<h2>三、SpringMVC常用注解</h2>
+<p>@Controller</p>
+<p>　　负责注册一个bean 到spring 上下文中<br>@RequestMapping</p>
+<p>　　注解为控制器指定可以处理哪些 URL 请求<br>@RequestBody</p>
+<p>　　该注解用于读取Request请求的body部分数据，使用系统默认配置的HttpMessageConverter进行解析，然后把相应的数
+据绑定到要返回的对象上&nbsp;,再把HttpMessageConverter返回的对象数据绑定到 controller中方法的参数上</p>
+<p>@ResponseBody</p>
+<p>　　&nbsp;该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区</p>
+<p>@ModelAttribute&nbsp;　　　</p>
+<p>　　在方法定义上使用 @ModelAttribute 注解：Spring MVC 在调用目标处理方法前，会先逐个调用在方法级上标注了@ModelAttribute 的方法</p>
+<p>　　在方法的入参前使用 @ModelAttribute 注解：可以从隐含对象中获取隐含的模型数据中获取对象，再将请求参数 –绑定到对象中，再传入入参将方法入参对象添加到模型中&nbsp;</p>
+<p>@RequestParam　</p>
+<p>　　在处理方法入参处使用 @RequestParam 可以把请求参 数传递给请求方法</p>
+<p>@PathVariable</p>
+<p>　　绑定 URL 占位符到入参<br>@ExceptionHandler</p>
+<p>　　注解到方法上，出现异常时会执行该方法<br>@ControllerAdvice</p>
+<p>　　使一个Contoller成为全局的异常处理类，类中用@ExceptionHandler方法注解的方法可以处理所有Controller发生的异常</p>
+<h2>四、自动匹配参数</h2>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    //match automatically
+    @RequestMapping("/person")
+    public String toPerson(String name,double age){
+        System.out.println(name+" "+age);
+        return "hello";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>五、自动装箱</h2>
+<p>1.编写一个Person实体类</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>package test.SpringMVC.model;
+
+public class Person {
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    private String name;
+    private int age;
+    
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>2.在Controller里编写方法</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    //boxing automatically
+    @RequestMapping("/person1")
+    public String toPerson(Person p){
+        System.out.println(p.getName()+" "+p.getAge());
+        return "hello";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>六、使用InitBinder来处理Date类型的参数</h2>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    //the parameter was converted in initBinder
+    @RequestMapping("/date")
+    public String date(Date date){
+        System.out.println(date);
+        return "hello";
+    }
+    
+    //At the time of initialization,convert the type "String" to type "date"
+    @InitBinder
+    public void initBinder(ServletRequestDataBinder binder){
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"),
+                true));
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>七、向前台传递参数</h2>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    //pass the parameters to front-end
+    @RequestMapping("/show")
+    public String showPerson(Map&lt;String,Object&gt; map){
+        Person p =new Person();
+        map.put("p", p);
+        p.setAge(20);
+        p.setName("jayjay");
+        return "show";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>前台可在Request域中取到"p"</p>
+<h2>八、使用Ajax调用</h2>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    //pass the parameters to front-end using ajax
+    @RequestMapping("/getPerson")
+    public void getPerson(String name,PrintWriter pw){
+        pw.write("hello,"+name);        
+    }
+    @RequestMapping("/name")
+    public String sayHello(){
+        return "name";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>前台用下面的Jquery代码调用</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>          $(function(){
+              $("#btn").click(function(){
+                  $.post("mvc/getPerson",{name:$("#name").val()},function(data){
+                      alert(data);
+                  });
+              });
+          });</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>九、在Controller中使用redirect方式处理请求</h2>
+<div class="cnblogs_code">
+<pre>    //redirect 
+    @RequestMapping("/redirect")
+    public String redirect(){
+        return "redirect:hello";
+    }</pre>
+</div>
+<h2>十、文件上传</h2>
+<p>1.需要导入两个jar包</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052005184887879.png" alt=""></p>
+<p>2.在SpringMVC配置文件中加入</p>
+<div class="cnblogs_code">
+<pre>    &lt;!-- upload settings --&gt;
+    &lt;bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;
+        &lt;property name="maxUploadSize" value="102400000"&gt;&lt;/property&gt;
+    &lt;/bean&gt;</pre>
+</div>
+<p>3.方法代码</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    @RequestMapping(value="/upload",method=RequestMethod.POST)
+    public String upload(HttpServletRequest req) throws Exception{
+        MultipartHttpServletRequest mreq = (MultipartHttpServletRequest)req;
+        MultipartFile file = mreq.getFile("file");
+        String fileName = file.getOriginalFilename();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");        
+        FileOutputStream fos = new FileOutputStream(req.getSession().getServletContext().getRealPath("/")+
+                "upload/"+sdf.format(new Date())+fileName.substring(fileName.lastIndexOf('.')));
+        fos.write(file.getBytes());
+        fos.flush();
+        fos.close();
+        
+        return "hello";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>4.前台form表单</p>
+<div class="cnblogs_code">
+<pre>      &lt;form action="mvc/upload" method="post" enctype="multipart/form-data"&gt;
+          &lt;input type="file" name="file"&gt;&lt;br&gt;
+          &lt;input type="submit" value="submit"&gt;
+      &lt;/form&gt;</pre>
+</div>
+<h2>十一、使用@RequestParam注解指定参数的name</h2>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/test")
+public class mvcController1 {
+    @RequestMapping(value="/param")
+    public String testRequestParam(@RequestParam(value="id") Integer id,
+            @RequestParam(value="name")String name){
+        System.out.println(id+" "+name);
+        return "/hello";
+    }    
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>十二、RESTFul风格的SringMVC</h2>
+<p>1.RestController</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/rest")
+public class RestController {
+    @RequestMapping(value="/user/{id}",method=RequestMethod.GET)
+    public String get(@PathVariable("id") Integer id){
+        System.out.println("get"+id);
+        return "/hello";
+    }
+    
+    @RequestMapping(value="/user/{id}",method=RequestMethod.POST)
+    public String post(@PathVariable("id") Integer id){
+        System.out.println("post"+id);
+        return "/hello";
+    }
+    
+    @RequestMapping(value="/user/{id}",method=RequestMethod.PUT)
+    public String put(@PathVariable("id") Integer id){
+        System.out.println("put"+id);
+        return "/hello";
+    }
+    
+    @RequestMapping(value="/user/{id}",method=RequestMethod.DELETE)
+    public String delete(@PathVariable("id") Integer id){
+        System.out.println("delete"+id);
+        return "/hello";
+    }
+    
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>2.form表单发送put和delete请求</p>
+<p>在web.xml中配置</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>  &lt;!-- configure the HiddenHttpMethodFilter,convert the post method to put or delete --&gt;
+  &lt;filter&gt;
+      &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
+      &lt;filter-class&gt;org.springframework.web.filter.HiddenHttpMethodFilter&lt;/filter-class&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+      &lt;filter-name&gt;HiddenHttpMethodFilter&lt;/filter-name&gt;
+      &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>在前台可以用以下代码产生请求</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    &lt;form action="rest/user/1" method="post"&gt;
+        &lt;input type="hidden" name="_method" value="PUT"&gt;
+        &lt;input type="submit" value="put"&gt;
+    &lt;/form&gt;
+    
+    &lt;form action="rest/user/1" method="post"&gt;
+        &lt;input type="submit" value="post"&gt;
+    &lt;/form&gt;
+    
+    &lt;form action="rest/user/1" method="get"&gt;
+        &lt;input type="submit" value="get"&gt;
+    &lt;/form&gt;
+    
+    &lt;form action="rest/user/1" method="post"&gt;
+        &lt;input type="hidden" name="_method" value="DELETE"&gt;
+        &lt;input type="submit" value="delete"&gt;
+    &lt;/form&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>十三、返回json格式的字符串</h2>
+<p>1.导入以下jar包</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052029372696778.png" alt=""></p>
+<p>2.方法代码</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/json")
+public class jsonController {
+    
+    @ResponseBody
+    @RequestMapping("/user")
+    public  User get(){
+        User u = new User();
+        u.setId(1);
+        u.setName("jayjay");
+        u.setBirth(new Date());
+        return u;
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h2>十四、异常的处理</h2>
+<p>1.处理局部异常（Controller内）</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    @ExceptionHandler
+    public ModelAndView exceptionHandler(Exception ex){
+        ModelAndView mv = new ModelAndView("error");
+        mv.addObject("exception", ex);
+        System.out.println("in testExceptionHandler");
+        return mv;
+    }
+    
+    @RequestMapping("/error")
+    public String error(){
+        int i = 5/0;
+        return "hello";
+    }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>2.处理全局异常（所有Controller）</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@ControllerAdvice
+public class testControllerAdvice {
+    @ExceptionHandler
+    public ModelAndView exceptionHandler(Exception ex){
+        ModelAndView mv = new ModelAndView("error");
+        mv.addObject("exception", ex);
+        System.out.println("in testControllerAdvice");
+        return mv;
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>3.另一种处理全局异常的方法</p>
+<p>在SpringMVC配置文件中配置</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    &lt;!-- configure SimpleMappingExceptionResolver --&gt;
+    &lt;bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"&gt;
+        &lt;property name="exceptionMappings"&gt;
+            &lt;props&gt;
+                &lt;prop key="java.lang.ArithmeticException"&gt;error&lt;/prop&gt;
+            &lt;/props&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>error是出错页面</p>
+<h2>十五、设置一个自定义拦截器</h2>
+<p>1.创建一个MyInterceptor类，并实现HandlerInterceptor接口</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>public class MyInterceptor implements HandlerInterceptor {
+
+    @Override
+    public void afterCompletion(HttpServletRequest arg0,
+            HttpServletResponse arg1, Object arg2, Exception arg3)
+            throws Exception {
+        System.out.println("afterCompletion");
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
+            Object arg2, ModelAndView arg3) throws Exception {
+        System.out.println("postHandle");
+    }
+
+    @Override
+    public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1,
+            Object arg2) throws Exception {
+        System.out.println("preHandle");
+        return true;
+    }
+
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>2.在SpringMVC的配置文件中配置</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    &lt;!-- interceptor setting --&gt;
+    &lt;mvc:interceptors&gt;
+        &lt;mvc:interceptor&gt;
+            &lt;mvc:mapping path="/mvc/**"/&gt;
+            &lt;bean class="test.SpringMVC.Interceptor.MyInterceptor"&gt;&lt;/bean&gt;
+        &lt;/mvc:interceptor&gt;        
+    &lt;/mvc:interceptors&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>3.拦截器执行顺序</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052112090047146.png" alt=""></p>
+<h2>十六、表单的验证（使用Hibernate-validate）及国际化</h2>
+<p>1.导入Hibernate-validate需要的jar包</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052116271296839.png" alt="">(未选中不用导入)</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052116407233893.png" alt=""></p>
+<p>2.编写实体类User并加上验证注解</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>public class User {
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Date getBirth() {
+        return birth;
+    }
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", birth=" + birth + "]";
+    }    
+    private int id;
+    @NotEmpty
+    private String name;
+
+    @Past
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date birth;
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>ps:@Past表示时间必须是一个过去值</p>
+<p>3.在jsp中使用SpringMVC的form表单</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>    &lt;form:form action="form/add" method="post" modelAttribute="user"&gt;
+        id:&lt;form:input path="id"/&gt;&lt;form:errors path="id"/&gt;&lt;br&gt;
+        name:&lt;form:input path="name"/&gt;&lt;form:errors path="name"/&gt;&lt;br&gt;
+        birth:&lt;form:input path="birth"/&gt;&lt;form:errors path="birth"/&gt;
+        &lt;input type="submit" value="submit"&gt;
+    &lt;/form:form&gt; </pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>ps:path对应name</p>
+<p>4.Controller中代码</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/form")
+public class formController {
+    @RequestMapping(value="/add",method=RequestMethod.POST)    
+    public String add(@Valid User u,BindingResult br){
+        if(br.getErrorCount()&gt;0){            
+            return "addUser";
+        }
+        return "showUser";
+    }
+    
+    @RequestMapping(value="/add",method=RequestMethod.GET)
+    public String add(Map&lt;String,Object&gt; map){
+        map.put("user",new User());
+        return "addUser";
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>ps:</p>
+<p>　　1.因为jsp中使用了modelAttribute属性，所以必须在request域中有一个"user".</p>
+<p>　　2.@Valid 表示按照在实体上标记的注解验证参数</p>
+<p>　　3.返回到原页面错误信息回回显，表单也会回显</p>
+<p>5.错误信息自定义</p>
+<p>在src目录下添加locale.properties</p>
+<div class="cnblogs_code">
+<pre>NotEmpty.user.name=name can't not be empty
+Past.user.birth=birth should be a past value
+DateTimeFormat.user.birth=the format of input is wrong
+typeMismatch.user.birth=the format of input is wrong
+typeMismatch.user.id=the format of input is wrong</pre>
+</div>
+<p>在SpringMVC配置文件中配置</p>
+<div class="cnblogs_code">
+<pre>    &lt;!-- configure the locale resource --&gt;
+    &lt;bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"&gt;
+        &lt;property name="basename" value="locale"&gt;&lt;/property&gt;
+    &lt;/bean&gt;</pre>
+</div>
+<p>6.国际化显示</p>
+<p>在src下添加locale_zh_CN.properties</p>
+<div class="cnblogs_code">
+<pre>username=账号
+password=密码</pre>
+</div>
+<p>locale.properties中添加</p>
+<div class="cnblogs_code">
+<pre>username=user name
+password=password</pre>
+</div>
+<p>创建一个locale.jsp</p>
+<div class="cnblogs_code">
+<pre>  &lt;body&gt;
+    &lt;fmt:message key="username"&gt;&lt;/fmt:message&gt;
+    &lt;fmt:message key="password"&gt;&lt;/fmt:message&gt;
+  &lt;/body&gt;</pre>
+</div>
+<p>在SpringMVC中配置</p>
+<div class="cnblogs_code">
+<pre>    &lt;!-- make the jsp page can be visited --&gt;
+    &lt;mvc:view-controller path="/locale" view-name="locale"/&gt;</pre>
+</div>
+<p>让locale.jsp在WEB-INF下也能直接访问</p>
+<p>最后，访问locale.jsp，切换浏览器语言，能看到账号和密码的语言也切换了</p>
+<h2>十七、压轴大戏--整合SpringIOC和SpringMVC</h2>
+<p>1.创建一个test.SpringMVC.integrate的包用来演示整合，并创建各类</p>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052306155821182.png" alt=""></p>
+<p>2.User实体类</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>public class User {
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Date getBirth() {
+        return birth;
+    }
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", birth=" + birth + "]";
+    }    
+    private int id;
+    @NotEmpty
+    private String name;
+
+    @Past
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date birth;
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>3.UserService类</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Component<br>public class UserService {
+    public UserService(){
+        System.out.println("UserService Constructor...\n\n\n\n\n\n");
+    }
+    
+    public void save(){
+        System.out.println("save");
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>4.UserController</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>@Controller
+@RequestMapping("/integrate")
+public class UserController {
+    @Autowired
+    private UserService userService;
+    
+    @RequestMapping("/user")
+    public String saveUser(@RequestBody @ModelAttribute User u){
+        System.out.println(u);
+        userService.save();
+        return "hello";
+    }
+}</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>5.Spring配置文件</p>
+<p>在src目录下创建SpringIOC的配置文件applicationContext.xml</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        "
+        xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"    
+        &gt;
+    &lt;context:component-scan base-package="test.SpringMVC.integrate"&gt;
+        &lt;context:exclude-filter type="annotation" 
+            expression="org.springframework.stereotype.Controller"/&gt;
+        &lt;context:exclude-filter type="annotation" 
+            expression="org.springframework.web.bind.annotation.ControllerAdvice"/&gt;        
+    &lt;/context:component-scan&gt;
+    
+&lt;/beans&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>在Web.xml中添加配置</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>  &lt;!-- configure the springIOC --&gt;
+  &lt;listener&gt;
+      &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+  &lt;/listener&gt;
+  &lt;context-param&gt;  
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;  
+    &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+  &lt;/context-param&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>6.在SpringMVC中进行一些配置，防止SpringMVC和SpringIOC对同一个对象的管理重合</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<pre>&lt;!-- scan the package and the sub package --&gt;
+    &lt;context:component-scan base-package="test.SpringMVC.integrate"&gt;
+        &lt;context:include-filter type="annotation" 
+            expression="org.springframework.stereotype.Controller"/&gt;
+        &lt;context:include-filter type="annotation" 
+            expression="org.springframework.web.bind.annotation.ControllerAdvice"/&gt;
+    &lt;/context:component-scan&gt;</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode_002.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<h2><strong>十八、SpringMVC详细运行流程图</strong></h2>
+<p><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/052340331602684.png" alt=""></p>
+<h2>十九、SpringMVC运行原理</h2>
+<p>&nbsp;</p>
+<p>1. 客户端请求提交到DispatcherServlet<br>2. 由DispatcherServlet控制器查询一个或多个HandlerMapping，找到处理请求的Controller<br>3. DispatcherServlet将请求提交到Controller<br>4. Controller调用业务逻辑处理后，返回ModelAndView<br>5. DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图<br>6. 视图负责将结果显示到客户端</p>
+<p>&nbsp;</p>
+<h2>二十、SpringMVC与struts2的区别</h2>
+<p>1、springmvc基于方法开发的，struts2基于类开发的。springmvc将url和controller里的方法映射。映射成功后
+springmvc生成一个Handler对象，对象中只包括了一个method。方法执行结束，形参数据销毁。springmvc的
+controller开发类似web service开发。<br>2、springmvc可以进行单例开发，并且建议使用单例开发，struts2通过类的成员变量接收参数，无法使用单例，只能使用多例。<br>3、经过实际测试，struts2速度慢，在于使用struts标签，如果使用struts建议使用jstl。</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/goody9807/category/95933.html" target="_blank">Java相关</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6450589,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow('bc86310b-63cf-dd11-9e4d-001cf0cd104b');" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/goody9807/" target="_blank"><img src="%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BASpringMVC%E8%AF%A6%E7%BB%86%E7%A4%BA%E4%BE%8B%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%20-%20PointNet%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/u2507.jpg" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/goody9807/">PointNet</a><br>
+            <a href="http://home.cnblogs.com/u/goody9807/followees">关注 - 1</a><br>
+            <a href="http://home.cnblogs.com/u/goody9807/followers">粉丝 - 321</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow('bc86310b-63cf-dd11-9e4d-001cf0cd104b');return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6450589,'Digg')">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+    <div class="buryit" onclick="votePost(6450589,'Bury')">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/goody9807/p/6443749.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/goody9807/p/6443749.html" title="发布于2017-02-26 10:37">rabbitMQ第二篇：java简单的实现RabbitMQ</a><br><a href="http://www.cnblogs.com/goody9807/p/6473091.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/goody9807/p/6473091.html" title="发布于2017-02-27 11:52">Memcached, Redis, MongoDB区别</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-02-26 22:33</span> <a href="http://www.cnblogs.com/goody9807/">PointNet</a> 阅读(<span id="post_view_count">1567</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6450589" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6450589);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=5395,cb_entryId=6450589,cb_blogApp=currentBlogApp,cb_blogUserGuid='bc86310b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2017/2/26 22:33:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/592565/" target="_blank">优秀管理者的四大核心支柱</a><br> ·  <a href="https://news.cnblogs.com/n/592535/" target="_blank">如何让产品变得更有 “黏性”？</a><br> ·  <a href="https://news.cnblogs.com/n/592541/" target="_blank">药驾的危害：驾车不能吃哪些药呢？今天我们就来详细的说一说</a><br> ·  <a href="https://news.cnblogs.com/n/592594/" target="_blank">GitLab添加了对GitHub的支持，来吸引GitHub用户使用</a><br> ·  <a href="https://news.cnblogs.com/n/592592/" target="_blank">当AI变得无处不在 人类社会将发生这五大变化</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/575255/" target="_blank">写给自学者的入门指南</a><br> ·  <a href="http://kb.cnblogs.com/page/578690/" target="_blank">和程序员谈恋爱</a><br> ·  <a href="http://kb.cnblogs.com/page/585734/" target="_blank">学会学习</a><br> ·  <a href="http://kb.cnblogs.com/page/588938/" target="_blank">优秀技术人的管理陷阱</a><br> ·  <a href="http://kb.cnblogs.com/page/590141/" target="_blank">作为一个程序员，数学对你到底有多重要</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"><b>历史上的今天:</b><br>2010-02-26 <a href="http://www.cnblogs.com/goody9807/archive/2010/02/26/1674253.html">Silverlight DataGrid 列操作</a><br>2009-02-26 <a href="http://www.cnblogs.com/goody9807/archive/2009/02/26/1398958.html">一个不错的日历控件(javascript写的)</a><br></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><!--<br />
+
+
+
+<a href="http://dijia.uz.taobao.com" target="_blank"><img alt="底价街" src="https://images.cnblogs.com/cnblogs_com/goody9807/8855/o_dijia.gif" /></a> 
+<br />
+
+
+
+ 
+<center><a style="font-weight: bold; color: red" href="http://weibo.com/lovewr" target="_blank">请关注我的微博</a> <br /><br />
+<a style="font-weight: bold; color: red" href="http://siwa8.taobao.com" target="_blank">我的淘宝小店：睿宇丝袜吧 - 连裤袜、连衣裙、内裤、背心T恤、打底裤、运动袜棉袜专卖</a> 
+  <br />
+
+<a href="http://tb.cn/Qsa9UXy" target="_blank"><img width="200" height="200" alt="底价街-0.88元包邮" src="https://images.cnblogs.com/cnblogs_com/goody9807/8855/o_%e5%ba%95%e4%bb%b7%e8%a1%97_QQ%e7%be%a4_big.png" /></a> 
+<br />
+
+<a style="font-weight: bold; color: green" href="http://tb.cn/Qsa9UXy " target="_blank">扫码或点击链接关注微淘号玩转底价街，每天都会通知0.88元秒杀、限时抢、9.9包邮等大量超低价宝贝，买到就是赚到！
+商家合作、免费上活动请加Q群号：133725364 </a> 
+
+<br />
+
+</center><br />-->
+<!-- Start of StatCounter Code --><!-- End of StatCounter Code --><br><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/goody9807/">PointNet</a><br>园龄：<a href="https://home.cnblogs.com/u/goody9807/" title="入园时间：2004-08-19">13年7个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/goody9807/followers/">321</a><br>关注：<a href="https://home.cnblogs.com/u/goody9807/followees/">1</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow('bc86310b-63cf-dd11-9e4d-001cf0cd104b')">+加关注</a></div><script>getFollowStatus('bc86310b-63cf-dd11-9e4d-001cf0cd104b')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="Calendar" cellspacing="0" cellpadding="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2018/02/01');return false;">&lt;</a></td><td align="center">2018年3月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2018/04/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center"><a href="http://www.cnblogs.com/goody9807/archive/2018/03/08.html"><u>8</u></a></td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalTodayDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalWeekendDay" align="center">31</td></tr><tr><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/goody9807/p/8530728.html">1. shell之磁盘容量检查，配合crontab可以定时清理磁盘</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7660480.html">2. spring注解之@profile</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7659993.html">3. How to do conditional auto-wiring in Spring?</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7649359.html">4. MyBatis传入参数为集合 list 数组 map写法</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7647644.html">5. Spring Boot @Autowired 没法自动注入的问题</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7608213.html">6. mysql5.5 uuid做主键与int做主键的性能实测</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7522157.html">7. dom4j解析xml字符串实例</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7472139.html">8. spring自动注入是单例还是多例？单例如何注入多例？</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7472127.html">9. Spring中Bean的五个作用域</a></li><li><a href="http://www.cnblogs.com/goody9807/p/7441739.html">10. 【总结】瞬时高并发（秒杀/活动）Redis方案</a></li>
+</ul>
+</div>
+</div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(759)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/goody9807/category/110879.html">.Net2.0(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/goody9807/category/103698.html">.Net基础知识(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/goody9807/category/113927.html">Ajax相关(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/goody9807/category/18729.html">Asp.Net杂类(122)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/goody9807/category/103700.html">CSS相关(25)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/goody9807/category/34062.html">DataGrid相关(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/goody9807/category/40921.html">DotNet常见问题(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/goody9807/category/112135.html">Html在线编辑控件(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/goody9807/category/248037.html">IOC依赖注入(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/goody9807/category/95933.html">Java相关(73)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/goody9807/category/120432.html">Jquery相关(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/goody9807/category/18732.html">Js与DHtml(99)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/goody9807/category/549499.html">Linux相关(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/goody9807/category/234743.html">MVP模式(MVC)(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/goody9807/category/658233.html">NoSql(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/goody9807/category/40891.html">OR-Mapping(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/goody9807/category/142071.html">PHP技术相关(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/goody9807/category/103697.html">Remoting(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/goody9807/category/397000.html">Restful(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/goody9807/category/647402.html">Ruby on Rails(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/goody9807/category/234741.html">SilverLight(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/goody9807/category/112628.html">WebClient、Request(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/goody9807/category/83788.html">WebService/WCF(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="http://www.cnblogs.com/goody9807/category/154687.html">Winform(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="http://www.cnblogs.com/goody9807/category/36016.html">Xml技术相关(27)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="http://www.cnblogs.com/goody9807/category/40894.html">安装调试问题(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="http://www.cnblogs.com/goody9807/category/40928.html">窗口传值(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="http://www.cnblogs.com/goody9807/category/962118.html">大数据(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="http://www.cnblogs.com/goody9807/category/33971.html">读写和导出文件(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="http://www.cnblogs.com/goody9807/category/104341.html">发送邮件相关(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_30" href="http://www.cnblogs.com/goody9807/category/105981.html">乱码相关(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_31" href="http://www.cnblogs.com/goody9807/category/83787.html">密码学相关(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_32" href="http://www.cnblogs.com/goody9807/category/20235.html">其他与技术相关(31)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_33" href="http://www.cnblogs.com/goody9807/category/321168.html">设计模式(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_34" href="http://www.cnblogs.com/goody9807/category/30045.html">树控件相关(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_35" href="http://www.cnblogs.com/goody9807/category/18730.html">数据库相关(41)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_36" href="http://www.cnblogs.com/goody9807/category/35199.html">图表报表(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_37" href="http://www.cnblogs.com/goody9807/category/18731.html">网络知识(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_38" href="http://www.cnblogs.com/goody9807/category/249496.html">消息队列(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_39" href="http://www.cnblogs.com/goody9807/category/30047.html">杂类随笔(39)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_40" href="http://www.cnblogs.com/goody9807/category/78170.html">正则表达式(13)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(779)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/goody9807/archive/2018/03.html">2018年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/goody9807/archive/2017/10.html">2017年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/goody9807/archive/2017/09.html">2017年9月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/goody9807/archive/2017/08.html">2017年8月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/goody9807/archive/2017/07.html">2017年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/goody9807/archive/2017/06.html">2017年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/goody9807/archive/2017/05.html">2017年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/goody9807/archive/2017/04.html">2017年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/goody9807/archive/2017/03.html">2017年3月 (35)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/goody9807/archive/2017/02.html">2017年2月 (25)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/goody9807/archive/2016/12.html">2016年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/goody9807/archive/2016/11.html">2016年11月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/goody9807/archive/2016/07.html">2016年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/goody9807/archive/2016/05.html">2016年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/goody9807/archive/2016/03.html">2016年3月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/goody9807/archive/2016/01.html">2016年1月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/goody9807/archive/2015/11.html">2015年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/goody9807/archive/2015/10.html">2015年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/goody9807/archive/2015/09.html">2015年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/goody9807/archive/2015/07.html">2015年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/goody9807/archive/2015/05.html">2015年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/goody9807/archive/2015/03.html">2015年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/goody9807/archive/2015/02.html">2015年2月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/goody9807/archive/2015/01.html">2015年1月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/goody9807/archive/2014/12.html">2014年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/goody9807/archive/2014/11.html">2014年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/goody9807/archive/2014/08.html">2014年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/goody9807/archive/2014/06.html">2014年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/goody9807/archive/2014/05.html">2014年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/goody9807/archive/2014/03.html">2014年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/goody9807/archive/2014/02.html">2014年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/goody9807/archive/2014/01.html">2014年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/goody9807/archive/2013/12.html">2013年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/goody9807/archive/2013/11.html">2013年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/goody9807/archive/2013/10.html">2013年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/goody9807/archive/2013/09.html">2013年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/goody9807/archive/2013/08.html">2013年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/goody9807/archive/2013/07.html">2013年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/goody9807/archive/2013/06.html">2013年6月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/goody9807/archive/2013/04.html">2013年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/goody9807/archive/2013/03.html">2013年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/goody9807/archive/2013/01.html">2013年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/goody9807/archive/2012/12.html">2012年12月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/goody9807/archive/2012/11.html">2012年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/goody9807/archive/2012/10.html">2012年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/goody9807/archive/2012/09.html">2012年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/goody9807/archive/2012/08.html">2012年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/goody9807/archive/2012/07.html">2012年7月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/goody9807/archive/2012/05.html">2012年5月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_49" href="http://www.cnblogs.com/goody9807/archive/2012/04.html">2012年4月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_50" href="http://www.cnblogs.com/goody9807/archive/2012/03.html">2012年3月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_51" href="http://www.cnblogs.com/goody9807/archive/2012/02.html">2012年2月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_52" href="http://www.cnblogs.com/goody9807/archive/2012/01.html">2012年1月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_53" href="http://www.cnblogs.com/goody9807/archive/2011/12.html">2011年12月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_54" href="http://www.cnblogs.com/goody9807/archive/2011/11.html">2011年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_55" href="http://www.cnblogs.com/goody9807/archive/2011/10.html">2011年10月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_56" href="http://www.cnblogs.com/goody9807/archive/2011/09.html">2011年9月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_57" href="http://www.cnblogs.com/goody9807/archive/2011/08.html">2011年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_58" href="http://www.cnblogs.com/goody9807/archive/2011/07.html">2011年7月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_59" href="http://www.cnblogs.com/goody9807/archive/2011/06.html">2011年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_60" href="http://www.cnblogs.com/goody9807/archive/2011/05.html">2011年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_61" href="http://www.cnblogs.com/goody9807/archive/2011/03.html">2011年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_62" href="http://www.cnblogs.com/goody9807/archive/2010/11.html">2010年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_63" href="http://www.cnblogs.com/goody9807/archive/2010/10.html">2010年10月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_64" href="http://www.cnblogs.com/goody9807/archive/2010/09.html">2010年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_65" href="http://www.cnblogs.com/goody9807/archive/2010/08.html">2010年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_66" href="http://www.cnblogs.com/goody9807/archive/2010/06.html">2010年6月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_67" href="http://www.cnblogs.com/goody9807/archive/2010/05.html">2010年5月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_68" href="http://www.cnblogs.com/goody9807/archive/2010/04.html">2010年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_69" href="http://www.cnblogs.com/goody9807/archive/2010/03.html">2010年3月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_70" href="http://www.cnblogs.com/goody9807/archive/2010/02.html">2010年2月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_71" href="http://www.cnblogs.com/goody9807/archive/2010/01.html">2010年1月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_72" href="http://www.cnblogs.com/goody9807/archive/2009/12.html">2009年12月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_73" href="http://www.cnblogs.com/goody9807/archive/2009/11.html">2009年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_74" href="http://www.cnblogs.com/goody9807/archive/2009/10.html">2009年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_75" href="http://www.cnblogs.com/goody9807/archive/2009/09.html">2009年9月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_76" href="http://www.cnblogs.com/goody9807/archive/2009/08.html">2009年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_77" href="http://www.cnblogs.com/goody9807/archive/2009/06.html">2009年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_78" href="http://www.cnblogs.com/goody9807/archive/2009/05.html">2009年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_79" href="http://www.cnblogs.com/goody9807/archive/2009/04.html">2009年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_80" href="http://www.cnblogs.com/goody9807/archive/2009/03.html">2009年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_81" href="http://www.cnblogs.com/goody9807/archive/2009/02.html">2009年2月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_82" href="http://www.cnblogs.com/goody9807/archive/2009/01.html">2009年1月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_83" href="http://www.cnblogs.com/goody9807/archive/2008/12.html">2008年12月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_84" href="http://www.cnblogs.com/goody9807/archive/2008/11.html">2008年11月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_85" href="http://www.cnblogs.com/goody9807/archive/2008/10.html">2008年10月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_86" href="http://www.cnblogs.com/goody9807/archive/2008/09.html">2008年9月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_87" href="http://www.cnblogs.com/goody9807/archive/2008/08.html">2008年8月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_88" href="http://www.cnblogs.com/goody9807/archive/2008/07.html">2008年7月 (16)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_89" href="http://www.cnblogs.com/goody9807/archive/2008/06.html">2008年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_90" href="http://www.cnblogs.com/goody9807/archive/2008/05.html">2008年5月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_91" href="http://www.cnblogs.com/goody9807/archive/2008/04.html">2008年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_92" href="http://www.cnblogs.com/goody9807/archive/2008/03.html">2008年3月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_93" href="http://www.cnblogs.com/goody9807/archive/2008/02.html">2008年2月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_94" href="http://www.cnblogs.com/goody9807/archive/2008/01.html">2008年1月 (25)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_95" href="http://www.cnblogs.com/goody9807/archive/2007/12.html">2007年12月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_96" href="http://www.cnblogs.com/goody9807/archive/2007/11.html">2007年11月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_97" href="http://www.cnblogs.com/goody9807/archive/2007/10.html">2007年10月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_98" href="http://www.cnblogs.com/goody9807/archive/2007/09.html">2007年9月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_99" href="http://www.cnblogs.com/goody9807/archive/2007/08.html">2007年8月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_100" href="http://www.cnblogs.com/goody9807/archive/2007/07.html">2007年7月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_101" href="http://www.cnblogs.com/goody9807/archive/2007/06.html">2007年6月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_102" href="http://www.cnblogs.com/goody9807/archive/2007/05.html">2007年5月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_103" href="http://www.cnblogs.com/goody9807/archive/2007/04.html">2007年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_104" href="http://www.cnblogs.com/goody9807/archive/2007/03.html">2007年3月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_105" href="http://www.cnblogs.com/goody9807/archive/2007/02.html">2007年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_106" href="http://www.cnblogs.com/goody9807/archive/2007/01.html">2007年1月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_107" href="http://www.cnblogs.com/goody9807/archive/2006/12.html">2006年12月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_108" href="http://www.cnblogs.com/goody9807/archive/2006/11.html">2006年11月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_109" href="http://www.cnblogs.com/goody9807/archive/2006/10.html">2006年10月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_110" href="http://www.cnblogs.com/goody9807/archive/2006/09.html">2006年9月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_111" href="http://www.cnblogs.com/goody9807/archive/2006/08.html">2006年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_112" href="http://www.cnblogs.com/goody9807/archive/2006/07.html">2006年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_113" href="http://www.cnblogs.com/goody9807/archive/2006/06.html">2006年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_114" href="http://www.cnblogs.com/goody9807/archive/2006/05.html">2006年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_115" href="http://www.cnblogs.com/goody9807/archive/2006/04.html">2006年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_116" href="http://www.cnblogs.com/goody9807/archive/2006/03.html">2006年3月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_117" href="http://www.cnblogs.com/goody9807/archive/2006/02.html">2006年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_118" href="http://www.cnblogs.com/goody9807/archive/2005/11.html">2005年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_119" href="http://www.cnblogs.com/goody9807/archive/2005/10.html">2005年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_120" href="http://www.cnblogs.com/goody9807/archive/2005/09.html">2005年9月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_121" href="http://www.cnblogs.com/goody9807/archive/2005/08.html">2005年8月 (26)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_122" href="http://www.cnblogs.com/goody9807/archive/2005/07.html">2005年7月 (41)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_123" href="http://www.cnblogs.com/goody9807/archive/2005/06.html">2005年6月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_124" href="http://www.cnblogs.com/goody9807/archive/2005/05.html">2005年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_125" href="http://www.cnblogs.com/goody9807/archive/2005/04.html">2005年4月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_126" href="http://www.cnblogs.com/goody9807/archive/2005/03.html">2005年3月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_127" href="http://www.cnblogs.com/goody9807/archive/2005/02.html">2005年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_128" href="http://www.cnblogs.com/goody9807/archive/2004/11.html">2004年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_129" href="http://www.cnblogs.com/goody9807/archive/2004/09.html">2004年9月 (3)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList我的主页">
+<h3 class="catListTitle">我的空间</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="https://www.google.com/adsense" rel="nofollow">Google广告登录</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="http://www.google.com/analytics" rel="nofollow" target="_blank">Google流量统计</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_2" href="http://www.yunfile.com/member/insert/goody9807.html" rel="nofollow" target="_blank">yunfile网盘</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_3" href="http://baihenet.blogspot.com/" rel="nofollow" target="_blank">我的Blogger</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_4" href="http://blog.csdn.net/goody9807" rel="nofollow">我的CSDN博客</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_5" href="http://goody9807.blog.hexun.com/" rel="nofollow" target="_blank">我的和讯博客</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_6" href="http://blog.sina.com.cn/u/1435673574" rel="nofollow" target="_blank">我的新浪博客</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList好友的一些网站或博客网址">
+<h3 class="catListTitle">友情链接</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_3_Link_0" href="http://goody9807.bokee.com/" rel="nofollow" target="_blank">蓝色港湾博客</a> </li>
+
+<li><a id="CatList_LinkList_3_Link_1" href="http://siwa8.taobao.com/" rel="nofollow" target="_blank">丝袜、连裤袜、连衣裙</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	791595
+	</li><li class="liRank">
+		排名 -	114
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/goody9807/p/4207692.html#3914199">1. Re:RubyGems 镜像</a></li>
+        <li class="recent_comment_body">$ gem install rails<br><br>这里应该是写错了！</li>
+        <li class="recent_comment_author">--阿飞-dufyun</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/goody9807/p/6502993.html#3904266">2. Re:SpringMVC默认欢迎页面的问题</a></li>
+        <li class="recent_comment_body">@CoderDream特地找回账号表示感谢...</li>
+        <li class="recent_comment_author">--FutaoSmile</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/goody9807/p/6512468.html#3871336">3. Re:一分钟教你知道乐观锁和悲观锁的区别</a></li>
+        <li class="recent_comment_body">每次去拿数据的时候都认为别人不会修改，所以不会上锁。不会上锁？？  不会上锁 那这个乐观锁哪来的？</li>
+        <li class="recent_comment_author">--不常来多担待</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/goody9807/p/6502993.html#3840934">4. Re:SpringMVC默认欢迎页面的问题</a></li>
+        <li class="recent_comment_body">在springmvc.xml配置文件中加上<br><br>&lt;mvc:default-servlet-handler/&gt;<br>就能访问到默认页了。</li>
+        <li class="recent_comment_author">--CoderDream</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/goody9807/p/3795488.html#3813983">5. Re:KAFKA分布式消息系统</a></li>
+        <li class="recent_comment_body">Kafka分布式消息系统实战（与JavaScalaHadoopStorm集成）<br>网盘下载：<a href="" target="_blank"></a> 密码: qvws</li>
+        <li class="recent_comment_author">--不为无学之</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/goody9807/archive/2007/06/13/782519.html">1. JSP/SERVLET入门教程－－Servlet 使用入门(7)</a></li><li><a href="http://www.cnblogs.com/goody9807/archive/2010/06/17/1759645.html">2. C#线程锁使用全功略(5)</a></li><li><a href="http://www.cnblogs.com/goody9807/archive/2006/11/06/551964.html">3. 一段非常简单的让图片自动切换js代码(5)</a></li><li><a href="http://www.cnblogs.com/goody9807/archive/2011/09/26/2191655.html">4. C# Post数据和接收简单示例【摘】(4)</a></li><li><a href="http://www.cnblogs.com/goody9807/archive/2012/05/31/2528506.html">5. jquery获取复选框的值(3)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 PointNet
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>
